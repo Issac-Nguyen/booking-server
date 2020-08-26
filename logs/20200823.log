@@ -1,0 +1,10 @@
+propose_date is not iterable
+propose_date is not iterable
+propose_date is not iterable
+propose_date is not iterable
+propose_date is not iterable
+propose_date is not iterable
+Transaction numbers are only allowed on a replica set member or mongos
+Transaction numbers are only allowed on a replica set member or mongos
+Transaction numbers are only allowed on a replica set member or mongos
+MongoError: Transaction numbers are only allowed on a replica set member or mongos

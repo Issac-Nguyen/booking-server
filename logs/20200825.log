@@ -1,0 +1,7 @@
+Cannot read property 'statusRepository' of undefined
+Cannot read property 'statusRepository' of undefined
+Cannot read property 'statusRepository' of undefined
+MongoError: Transaction numbers are only allowed on a replica set member or mongos
+Skip value must be non-negative, but received: -7
+Skip value must be non-negative, but received: -7
+Cannot read property 'findAll' of undefined

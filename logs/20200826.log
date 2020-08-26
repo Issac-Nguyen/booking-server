@@ -1,0 +1,14 @@
+Cannot destructure property `_id` of 'undefined' or 'null'.
+Cannot destructure property `_id` of 'undefined' or 'null'.
+Cannot destructure property `_id` of 'undefined' or 'null'.
+Cannot destructure property `_id` of 'undefined' or 'null'.
+result is not defined
+result is not defined
+result is not defined
+result is not defined
+updateValue is not defined
+id is not defined
+Cast to ObjectId failed for value "[Function: status]" at path "status"
+proposeDate is not defined
+Cannot read property 'updatedAt' of undefined
+Cannot read property 'updatedAt' of undefined
