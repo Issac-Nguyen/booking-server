@@ -24,21 +24,21 @@ class UpdateBookUseCase {
             }
             if(rest) {
                 
-                // transaction = await this.db.beginTransaction();
+                transaction = await this.db.beginTransaction();
                 const {propose_date, ...rest1} = rest;
                 if(propose_date) {
                     if(req.user.role == 'user')
                         return new Error(400, 'You\'re cheating', {})
-                    await this.proposeDateRepo.update({_id: propose_date}, {choose: true});
+                    await this.proposeDateRepo.update({_id: propose_date}, {choose: true}, transaction);
                 }
                 if(rest1 && rest1.status) {
                     const status = await this.statusRepo.findOne({_id: rest1.status});
                     if(req.user.role == 'user' && status && status.name == 'Approved')
                         return new Error(400, 'You\'re cheating', {})
-                    result = await this.repo.update({_id}, {status: rest1.status});
+                    result = await this.repo.update({_id}, {status: rest1.status}, transaction);
                 }
                 
-                // await this.db.commitTransaction(transaction);
+                await this.db.commitTransaction(transaction);
             }
             
             return new Result(200, 'success', {result})

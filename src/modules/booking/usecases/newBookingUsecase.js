@@ -17,16 +17,16 @@ class NewBookingUseCase {
 
             let transaction;
             try {
-                // transaction = await this.db.beginTransaction();
-                // const newBooking = await this.repo.create({event, location, status}, transaction);
-                const newBooking = await this.repo.create({event, location, status});
+                transaction = await this.db.beginTransaction();
+                const newBooking = await this.repo.create({event, location, status}, transaction);
+                // const newBooking = await this.repo.create({event, location, status});
                 for(let item of propose_date) {
                     const objectInsert = {booking_id: newBooking._id, propose_date: item};
-                    // const proposeDate = await this.repoProposeDate.create(objectInsert, transaction);
-                    const proposeDate = await this.repoProposeDate.create(objectInsert);
+                    const proposeDate = await this.repoProposeDate.create(objectInsert, transaction);
+                    // const proposeDate = await this.repoProposeDate.create(objectInsert);
                 }
                 
-                // await this.db.commitTransaction(transaction);
+                await this.db.commitTransaction(transaction);
 
                 return new Result(200, 'success', newBooking);
             } catch (err) {
